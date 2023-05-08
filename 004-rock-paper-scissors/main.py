@@ -1,3 +1,4 @@
+# valami nagyon nem klappol az if statementekkel
 import random
 
 a = "Rock"
@@ -26,6 +27,6 @@ elif ai_choice == "Paper" and player_choice == "Rock":
 elif ai_choice == "Paper" and player_choice == "Scissors":
     print("Player Win")
 elif ai_choice == "Scissors" and player_choice == "Rock":
-    print("AI Win")
+    print("Player Win")
 else:
     print("AI Win")
