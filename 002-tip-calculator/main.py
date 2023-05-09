@@ -12,14 +12,10 @@ bill = input("Total food cost in Hungaryan Forint(Ft):\n")
 person_num = input("How many parts do we divide it into?:\n")
 
 tip = input("What percentage u want to tip?:\n")
-if tip == "20%":
-    tip = "20"
-    tip_count = int(tip) / 100 + 1.00
-else:
-    tip_count = int(tip) / 100 + 1.00
+tip = tip.replace("%", "")
+tip_count = int(tip) / 100 + 1
 
 price_per_person = (int(bill) / int(person_num)) * tip_count
-
 rounded = round(price_per_person, 2)
 
 print(f"The bill is {rounded} Ft per person")
