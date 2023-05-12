@@ -1,21 +1,5 @@
 import random
 
-a = "Rock"
-b = "Paper"
-c = "Scissors"
-
-ai_choice_1 = [a, b, c]
-
-print(
-    "Welcome to the Rock/Paper/Scissors tournament against the smartest AI in the world"
-)
-print("Choose your weapon:\n'Rock'\n'Paper'\n'Scissors'")
-
-player_choice = input("")
-print("Your coice:" + player_choice)
-ai_choice = random.choice(ai_choice_1)
-print("The world smartest AI:" + ai_choice)
-
 rock = """
     _______
 ---'   ____)
@@ -43,29 +27,31 @@ scissors = """
 ---.__(___)
 """
 
+choices = [rock, paper, scissors]
+
+print(
+    "Welcome to the Rock/Paper/Scissors tournament against the smartest AI in the world"
+)
+print("Choose your weapon:\n'Rock: 0'\n'Paper: 1'\n'Scissors: 2'")
+
+player_choice_num = int(input(""))
+player_choice = choices[player_choice_num]
+ai_choice = random.choice(choices)
+
+print(player_choice)
+print(ai_choice)
+
 if ai_choice == player_choice:
-    if ai_choice == a:
-        print(rock, rock)
-    elif ai_choice == b:
-        print(paper, paper)
-    elif ai_choice == c:
-        print(scissors, scissors)
     print("Draw")
-elif ai_choice == "Rock" and player_choice == "Paper":
-    print(paper, rock)
+elif ai_choice == rock and player_choice == paper:
     print("Player Win")
-elif ai_choice == "Rock" and player_choice == "Scissors":
-    print(scissors, rock)
+elif ai_choice == rock and player_choice == scissors:
     print("AI Win")
-elif ai_choice == "Paper" and player_choice == "Rock":
-    print(rock, paper)
+elif ai_choice == paper and player_choice == rock:
     print("AI Win")
-elif ai_choice == "Paper" and player_choice == "Scissors":
-    print(scissors, paper)
+elif ai_choice == paper and player_choice == scissors:
     print("Player Win")
-elif ai_choice == "Scissors" and player_choice == "Rock":
-    print(rock, scissors)
+elif ai_choice == scissors and player_choice == rock:
     print("Player Win")
 else:
-    print(paper, scissors)
     print("AI Win")
