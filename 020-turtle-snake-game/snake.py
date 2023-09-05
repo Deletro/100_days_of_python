@@ -24,6 +24,13 @@ class Snake:
         turtle.goto(x, y)
         self.segments.append(turtle)
 
+    def reset_snake(self):
+        for seg in self.segments:
+            seg.goto(1000, 1000)
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
+
     def move(self):
         for i in range(len(self.segments) - 1, 0, -1):
             x = self.segments[i - 1].xcor()

@@ -45,8 +45,8 @@ while game_active:
     snake.move()
 
     if wall_collide() or self_collide():
-        scoreboard.game_over()
-        game_active = False
+        scoreboard.reset_scoreboard()
+        snake.reset_snake()
 
     if snake.head.distance(food) < 15:
         scoreboard.increase_score()
