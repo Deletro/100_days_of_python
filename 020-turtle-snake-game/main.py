@@ -38,6 +38,11 @@ def wall_collide():
     return False
 
 
+with open("highscore.txt") as file:
+    highscore = file.read()
+    scoreboard.high_score = int(highscore)
+    scoreboard.update_scoreboard()
+
 game_active = True
 while game_active:
     screen.update()
